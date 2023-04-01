@@ -49,4 +49,15 @@ export const clientDataRouter = createTRPCRouter({
         return updatedPatient;
       } catch (error) {}
     }),
+
+  fetchPatient: protectedProcedure.query(async ({ ctx }) => {
+    const userId = ctx.session.user.id;
+    try {
+      const patient = await ctx.prisma.patientData.findUnique({
+        where: { id: userId },
+      });
+
+      return patient;
+    } catch (error) {}
+  }),
 });
