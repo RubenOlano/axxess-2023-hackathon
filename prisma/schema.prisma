@@ -21,6 +21,8 @@ model Account {
     id_token          String? @db.Text
     session_state     String?
     user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
 }
 
 model Session {
@@ -38,7 +40,7 @@ model User {
     phoneNum      String?
     emailVerified DateTime?
     image         String?
-    role          Role
+    role          Role         @default(Patient)
     accounts      Account[]
     sessions      Session[]
     PatientData   PatientData? @relation(fields: [patientDataId], references: [id])
@@ -53,6 +55,8 @@ model PatientData {
     doctorId                 String
     visits                   Visit[]
     User                     User[]
+    fname                    String
+    lname                    String
 }
 
 model Visit {
