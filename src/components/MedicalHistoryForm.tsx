@@ -1,7 +1,6 @@
 import {ChangeEvent, useState} from "react";
 
-const Create = () => {
-    const pmh = ["ADHD", "Alcoholism", "Allergies", "Anemia", "Anxiety", "Arrhytmia", "Arthritis",
+const pmh = ["ADHD", "Alcoholism", "Allergies", "Anemia", "Anxiety", "Arrhytmia", "Arthritis",
     "Asthma", "Bipolar", "Bladder Problems/Incontinence", "Bleeding Problems", "Cancer", "Headaches",
     "Chron's Disease", "COPD/Emphysema", "Dementia", "Depression", "Diabetes: 1 or 2", "Diverticulitis",
     "DVT", "GERD", "Glaucoma", "Heart Disease", "Heart Attack", "Hiatal Hernia", "High Blood Pressure", "Kidney Stones",
@@ -9,6 +8,9 @@ const Create = () => {
     "Neuropathy", "Osteopenia/Osteoporosis", "Parkinson's", "PVD", "Peptic Ulcer", "Psoriasis",
     "Pulmonary Embolism", "Rheumatoid Arthritis", "Seizure Disorder", "Sleep Apnea", "Stroke",
     "Thyroid Disorder", "Ulcerative Colitis"]
+
+const Create = () => {
+    
     const [firstName, setFirstName] = useState ('');
     const [lastName, setLastName] = useState ('');
     const [personalMedHist, setPersonalMedHist] = useState<string[]>([])
