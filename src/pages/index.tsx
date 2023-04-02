@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import MedicalHistoryForm from "~/components/medicalHistoryForm";
+import MedicalHistoryForm from "~/components/MedicalHistoryForm";
 
 const Home: NextPage = () => {
   return (
